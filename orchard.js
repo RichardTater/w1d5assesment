@@ -18,6 +18,8 @@
     represents the number of acres that were picked 
     that day.
 
+    //ie. index[0] = Sunday, index[1] = Monday ...
+
     The first array is named fujiAcres. Notice 
     that the first item in this array is 2, 
     meaning that 2 acres of Fuji apples were 
@@ -51,8 +53,33 @@ const pinkPrice = .55
 
 // CODE HERE
 
+// We want to figure out how many acres were picked for all the apples. 
+// Find out how many acres we have for each apple
+// Total together for total acres
 
+let totalAcres = 0
+let totalFujiAcres = 0
+let totalGalaAcres = 0
+let totalPinkAcres = 0
 
+for (i = 0; i < fujiAcres.length; i++){
+    totalFujiAcres += fujiAcres[i]
+}
+console.log(`Total Fuji Acres Picked: ${totalFujiAcres}`)
+
+for (i = 0; i < galaAcres.length; i++){
+    totalGalaAcres += galaAcres[i]
+}
+console.log(`Total Gala Acres Picked: ${totalGalaAcres}`)
+
+for (i = 0; i < pinkAcres.length; i++){
+    totalPinkAcres += pinkAcres[i]
+}
+console.log(`Total Gala Acres Picked: ${totalPinkAcres}`)
+
+totalAcres = totalFujiAcres + totalGalaAcres + totalPinkAcres
+
+console.log(`There are ${totalAcres} in total.`)
 
 
 // PROBLEM 2
@@ -69,8 +96,10 @@ const pinkPrice = .55
 
 // CODE HERE
 
+// We want to take the total number of acres and divide it by how many days (length of the array) we picked for.
 
-
+let averageDailyAcres = totalAcres / fujiAcres.length
+console.log(`An average of ${averageDailyAcres} acres were picked per day.`)
 
 
 // PROBLEM 3
@@ -107,6 +136,13 @@ let days = 0
 
 // CODE HERE
 
+while ( acresLeft > 0){
+    for (let i = 0; acresLeft > 0; i++){
+        days = days + 1
+        acresLeft = acresLeft - averageDailyAcres
+    }
+}
+console.log(`It will take ${days} days to finish`)
 
 
 // PROBLEM 4
@@ -135,12 +171,9 @@ let days = 0
 
 // CODE HERE
 
-// let fujiTons =
-// let galaTons =
-// let pinkTons =
-
-
-
+// let fujiTons =[]
+// let galaTons =[]
+// let pinkTons =[]
 
 
 
