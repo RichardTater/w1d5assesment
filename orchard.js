@@ -171,10 +171,17 @@ console.log(`It will take ${days} days to finish`)
 
 // CODE HERE
 
-// let fujiTons =[]
-// let galaTons =[]
-// let pinkTons =[]
+let fujiTons =[]
+let galaTons =[]
+let pinkTons =[]
 
+for ( let i = 0; i < fujiAcres.length; i++){
+    fujiTons.push(fujiAcres[i]*6.5)
+    galaTons.push(galaAcres[i]*6.5)
+    pinkTons.push(pinkAcres[i]*6.5)
+}
+
+console.log(fujiTons, galaTons, pinkTons)
 
 
 // PROBLEM 5
@@ -195,12 +202,24 @@ console.log(`It will take ${days} days to finish`)
 
 // CODE HERE 
 
-// let fujiPounds =
-// let galaPounds =
-// let pinkPounds =
+let fujiPounds = 0
+let galaPounds = 0
+let pinkPounds = 0
+const tonConversion = 2000
+
+for (i = 0; i < fujiTons.length; i++){
+    fujiPounds += fujiTons[i]
+    galaPounds += galaTons[i]
+    pinkPounds += pinkTons[i]
+}
+fujiPounds = fujiPounds * tonConversion
+galaPounds = galaPounds * tonConversion
+pinkPounds = pinkPounds * tonConversion
 
 
-
+console.log(`There are ${fujiPounds} lbs of Fuji apples.`)
+console.log(`There are ${galaPounds} lbs of Gala apples.`)
+console.log(`There are ${pinkPounds} lbs of Pink apples.`)
 
 
 
@@ -222,12 +241,13 @@ console.log(`It will take ${days} days to finish`)
 
 // CODE HERE
 
-// let fujiProfit =
-// let galaProfit =
-// let pinkProfit =
+let fujiProfit = fujiPounds * fujiPrice
+let galaProfit = galaPounds * galaPrice
+let pinkProfit = pinkPounds * pinkPrice
 
-
-
+console.log(`Fuji Profit: ${fujiProfit}`)
+console.log(`Gala Profit: ${galaProfit}`)
+console.log(`Pink Profit: ${pinkProfit}`)
 
 
 
@@ -242,3 +262,10 @@ console.log(`It will take ${days} days to finish`)
 */
 
 // CODE HERE
+
+let totalProfit = fujiProfit + galaProfit + pinkProfit
+
+let totalProfitDollars = totalProfit / 100
+
+console.log(totalProfit)
+console.log(totalProfitDollars)
